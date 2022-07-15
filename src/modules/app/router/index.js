@@ -5,7 +5,7 @@ const authRoutes = require("../../auth/router");
 
 const createServer = () => {
   const app = express();
-  const allowedOrigins = ["*"];
+  const allowedOrigins = "*";
 
   const corsOptions = {
     origin: allowedOrigins,
