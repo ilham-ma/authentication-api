@@ -12,7 +12,7 @@ const createServer = () => {
   };
 
   app.use(express.json()); // parse json request body
-  app.use(cors());
+  app.use(cors(corsOptions));
 
   // routes
   app.use(authRoutes);
