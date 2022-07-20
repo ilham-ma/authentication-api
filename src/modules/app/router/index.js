@@ -5,7 +5,7 @@ const authRoutes = require("../../auth/router");
 
 const createServer = () => {
   const app = express();
-  const allowedOrigins = ["*", "http://localhost:8080"];
+  const allowedOrigins = ["*"];
 
   const corsOptions = {
     origin: allowedOrigins,
@@ -16,6 +16,10 @@ const createServer = () => {
 
   // routes
   app.use(authRoutes);
+
+  app.get("/", (req, res) => {
+    return res.json({ message: "halo" });
+  });
 
   return app;
 };
